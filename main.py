@@ -1,6 +1,7 @@
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
-
 
 def calcular_movimento_foguete(altura_inicial: float, aceleracao_gravidade: float, tempo_total: float, resistencia_ar: float):
     # Calcula o tempo de voo usando a fórmula t = (2h/g) + (v0/g)
