@@ -35,7 +35,7 @@ def formatar_tempo(tempo: float) -> str:
     horas = tempo // 60
     minutos = tempo % 60
 
-    return f"{horas:.0f} horas e {minutos:.0f} minutos"
+    return f"{horas:.0f} horas e {minutos:.0f} minutos" 
 
 
 if __name__ == "__main__":
@@ -47,5 +47,5 @@ if __name__ == "__main__":
 
     altura_final, tempo_voo = calcular_movimento_foguete(altura_inicial, aceleracao_gravidade, tempo_total, resistencia_ar)
 
-    print(f"Tempo para atingir a altura final: {formatar_tempo(tempo_voo)}")
+    print(f"Tempo para atingir sua altura final: {formatar_tempo(tempo_voo)}")
     print(f"Altura final: {altura_final:.2f} metros")
