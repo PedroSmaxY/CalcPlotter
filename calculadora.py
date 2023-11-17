@@ -49,7 +49,7 @@ def calculadora():
             # Calcula a derivada
             derivada = diff(funcao, x)
 
-            print(f"Derivada da função: {derivada}")
+            print(f"\nDerivada da função: {derivada}\n")
 
             x_vals = np.linspace(-50, 50, 100)
             y_vals = [eval(funcao) for x in x_vals]
