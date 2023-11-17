@@ -58,7 +58,7 @@ def calculadora():
             plt.figure(figsize=(10, 5))
             plt.plot(x_vals, y_vals, label="Função")
             plt.plot(x_vals, [eval(str(derivada))
-                              for x in x_vals], label="Derivada")
+            for x in x_vals], label="Derivada")
             plt.axhline(0, color='black', linewidth=1.5)
             plt.axvline(0, color='black', linewidth=1.5)
             plt.title("Gráfico da Função e sua Derivada")
