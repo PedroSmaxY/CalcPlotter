@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('TkAgg')
 
+
 def calculadora():
     x = symbols('x')
 
@@ -50,7 +51,7 @@ def calculadora():
 
             print(f"Derivada da função: {derivada}")
 
-            x_vals = np.linspace(-50, 50, 100)
+            x_vals = np.linspace(-10, 50, 100)
             y_vals = [eval(funcao) for x in x_vals]
 
             plt.figure(figsize=(10, 5))
@@ -62,7 +63,7 @@ def calculadora():
             plt.title("Gráfico da Função e sua Derivada")
             plt.xlabel("x")
             plt.ylabel("y")
-            plt.ylim(-20, 20)
+            plt.ylim(-10, 50)
             plt.legend()
             plt.grid(True)
             plt.show()
