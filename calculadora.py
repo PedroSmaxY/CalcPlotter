@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib
 matplotlib.use('TkAgg')
 
-
 def calculadora():
     x = symbols('x')
 
@@ -30,27 +29,26 @@ def calculadora():
 
             if operacao == 1:
                 resultado = num1 + num2
-                print("Resultado: {:.2f}".format(resultado))
+                print(f"Resultado: {resultado:.2f}")
             elif operacao == 2:
                 resultado = num1 - num2
-                print("Resultado: {:.2f}".format(resultado))
+                print(f"Resultado: {resultado:.2f}")
             elif operacao == 3:
                 resultado = num1 * num2
-                print("Resultado: {:.2f}".format(resultado))
+                print(f"resultado: {resultado:.2f}")
             elif operacao == 4:
                 if num2 != 0:
                     resultado = num1 / num2
-                    print("Resultado: {:.2f}".format(resultado))
+                    print(f"Resultado: {resultado:.2f}")
                 else:
                     print("Erro: Divisão por zero!")
         elif escolha == '5':
-            funcao = input(
-                "Digite uma função em termos de 'x' (por exemplo, x**2): ")
+            funcao = input("Digite uma função em termos de 'x' (por exemplo, x**2): ")
 
             # Calcula a derivada
             derivada = diff(funcao, x)
 
-            print("Derivada da função: {}".format(derivada))
+            print(f"Derivada da função: {derivada}")
 
             x_vals = np.linspace(-50, 50, 100)
             y_vals = [eval(funcao) for x in x_vals]
