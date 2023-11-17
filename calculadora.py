@@ -51,7 +51,7 @@ def calculadora():
 
             print(f"Derivada da função: {derivada}")
 
-            x_vals = np.linspace(-10, 50, 100)
+            x_vals = np.linspace(-50, 50, 100)
             y_vals = [eval(funcao) for x in x_vals]
 
             plt.figure(figsize=(10, 5))
