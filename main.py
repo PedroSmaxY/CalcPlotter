@@ -1,22 +1,18 @@
-from sympy import symbols, diff
-import matplotlib.pyplot as plt
-import numpy as np
-import matplotlib
-matplotlib.use('TkAgg')
+from src import func_expo
+from src import func_trig
 
 
 def calculadora():
-    x = symbols('x')
-
-    print("Bem-vindo à Calculadora com Gráfico!")
+    print("\nBem-vindo à Calculadora com Gráfico!")
     while True:
         print("\nEscolha uma operação:")
         print("1 - Adição")
         print("2 - Subtração")
         print("3 - Multiplicação")
         print("4 - Divisão")
-        print("5 - Gráfico da Função e Derivada")
-        print("0 - Sair")
+        print("5 - Gráfico da Função e Derivada/Integral")
+        print("6 - Gráfico da Função Trigonométrica e Derivada/Integral")
+        print("0 - Sair\n")
 
         escolha = input("Digite o número da operação desejada: ")
 
@@ -44,29 +40,10 @@ def calculadora():
                 else:
                     print("Erro: Divisão por zero!")
         elif escolha == '5':
-            funcao = input("Digite uma função em termos de 'x' (por exemplo, x**2): ")
+            func_expo.funcao_exponencial()
 
-            # Calcula a derivada
-            derivada = diff(funcao, x)
-
-            print(f"\nDerivada da função: {derivada}\n")
-
-            x_vals = np.linspace(-50, 50, 100)
-            y_vals = [eval(funcao) for x in x_vals]
-
-            plt.figure(figsize=(10, 5))
-            plt.plot(x_vals, y_vals, label="Função")
-            plt.plot(x_vals, [eval(str(derivada))
-            for x in x_vals], label="Derivada")
-            plt.axhline(0, color='black', linewidth=1.5)
-            plt.axvline(0, color='black', linewidth=1.5)
-            plt.title("Gráfico da Função e sua Derivada")
-            plt.xlabel("x")
-            plt.ylabel("y")
-            plt.ylim(-10, 50)
-            plt.legend()
-            plt.grid(True)
-            plt.show()
+        elif escolha == '6':
+            func_trig.funcao_trigonometrica()
         else:
             print("Opção inválida. Tente novamente.")
 

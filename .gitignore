@@ -9,3 +9,4 @@
 /dataSources.local.xml
 /.vscode/
 *.DS_Store
+/src/__pycache__/
