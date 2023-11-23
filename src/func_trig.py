@@ -4,16 +4,19 @@ import numpy as np
 import matplotlib
 matplotlib.use('TkAgg')
 
+
 def funcao_trigonometrica():
     x = symbols('x')
 
-    while(True):    
-        funcao_trig = input("Digite a função trigonométrica em termos de 'x' (por exemplo, sin(x)): y=")
+    while (True):
+        funcao_trig = input(
+            "Digite a função trigonométrica em termos de 'x' (por exemplo, sin(x)): y=")
         try:
             expr = sympify(funcao_trig)
             break
         except:
-            print("Erro: Função trigonométrica inválida. Certifique-se de usar a sintaxe correta.")
+            print(
+                "Erro: Função trigonométrica inválida. Certifique-se de usar a sintaxe correta.")
             continue
 
     x_vals = np.linspace(-100, 100, 10000)
@@ -35,13 +38,14 @@ def funcao_trigonometrica():
     plt.title("Gráfico da Função Trigonométrica")
     plt.xlabel("x")
     plt.ylabel("y")
-    plt.xlim(-5, 5)
-    plt.ylim(-2, 5)
+    plt.xlim(-10, 10)
+    plt.ylim(-5, 10)
     plt.axhline(0, color='black', linewidth=1.5)
     plt.axvline(0, color='black', linewidth=1.5)
     plt.legend()
     plt.grid(True)
     plt.show()
+
 
 if __name__ == "__main__":
     funcao_trigonometrica()
