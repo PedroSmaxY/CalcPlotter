@@ -5,7 +5,7 @@ from src import func_trig
 def calculadora():
     print("\nBem-vindo à Calculadora com Gráfico!")
     while True:
-        print("\nEscolha uma operação:") 
+        print("\nEscolha uma operação:")
         print("1 - Adição")
         print("2 - Subtração")
         print("3 - Multiplicação")
