@@ -57,7 +57,7 @@ def calculadora():
                     input("\nPressione ENTER para continuar...")
                 else:
                     print("\nErro: Divisão por zero!")
-                input("\nPressione ENTER para continuar...")
+                    input("\nPressione ENTER para continuar...")
 
         elif escolha == '5':
             funcao_exponencial()
