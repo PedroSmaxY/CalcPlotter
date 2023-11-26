@@ -1,10 +1,11 @@
-from src import func_expo
-from src import func_trig
-
+from src.func_expo import funcao_exponencial
+from src.func_trig import funcao_trigonometrica
+from src.limpar_console import limpar_console
 
 def calculadora():
-    print("\nBem-vindo à Calculadora com Gráfico!")
     while True:
+        limpar_console()
+        print("\nBem-vindo à Calculadora com Gráfico!\n")
         print("\nEscolha uma operação:")
         print("1 - Adição")
         print("2 - Subtração")
@@ -17,9 +18,11 @@ def calculadora():
         escolha = input("Digite o número da operação desejada: ")
 
         if escolha == '0':
+            limpar_console()
             print("Saindo da calculadora. Até logo!")
             break
         elif escolha in ['1', '2', '3', '4']:
+            limpar_console()
             operacao = int(escolha)
             num1 = float(input("Digite o primeiro número: "))
             num2 = float(input("Digite o segundo número: "))
@@ -40,10 +43,10 @@ def calculadora():
                 else:
                     print("Erro: Divisão por zero!")
         elif escolha == '5':
-            func_expo.funcao_exponencial()
+            funcao_exponencial()
 
         elif escolha == '6':
-            func_trig.funcao_trigonometrica()
+            funcao_trigonometrica()
         else:
             print("Opção inválida. Tente novamente.")
 

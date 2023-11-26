@@ -8,6 +8,8 @@ import matplotlib
 matplotlib.use('TkAgg') 
 
 def funcao_trigonometrica():
+    limpar_console()
+    
     # Define a variável simbólica x
     x = symbols('x')
 
@@ -20,6 +22,7 @@ def funcao_trigonometrica():
             break
         except:
             # Se ocorrer um erro, exibe uma mensagem e continua o loop
+            limpar_console()
             print("Erro: Função trigonométrica inválida. Certifique-se de usar a sintaxe correta.")
             continue
 
@@ -75,4 +78,7 @@ def funcao_trigonometrica():
 
 # Executa a função principal se o script for executado como um programa independente
 if __name__ == "__main__":
+    from limpar_console import limpar_console
     funcao_trigonometrica()
+else:
+    from .limpar_console import limpar_console

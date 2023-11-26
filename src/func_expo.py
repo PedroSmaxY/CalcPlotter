@@ -9,6 +9,8 @@ matplotlib.use('TkAgg')
 
 
 def funcao_exponencial():
+    limpar_console()
+    
     # Define a variável simbólica x
     x = symbols('x')
 
@@ -20,6 +22,7 @@ def funcao_exponencial():
             funcao = sympify(input("\ny="))
             break
         except:
+            limpar_console()
             # Se ocorrer um erro, exibe uma mensagem e continua o loop
             print("Erro: Função exponencial inválida. Certifique-se de usar a sintaxe correta.")
             continue
@@ -36,17 +39,11 @@ def funcao_exponencial():
     # Converte a função simbólica para uma função que pode ser avaliada numericamente
     f = lambdify(x, funcao, "numpy")
 
-    # Converte a expressão da derivada em uma função numérica
-    derivada_func = lambdify(x, derivada, "numpy")
-
     # Gera valores de x para o gráfico
     x_vals = np.linspace(-100, 100, 10000)
 
     # Avalia a expressão para obter os valores de y correspondentes
     y_vals = f(x_vals)
-
-    # Avalia a função derivada nos valores de x para o gráfico
-    derivada_vals = derivada_func(x_vals)
 
     # Define o tamanho da figura
     plt.figure(figsize=(10, 5))
@@ -54,7 +51,7 @@ def funcao_exponencial():
     # Define a função do gráfico
     plt.plot(x_vals, y_vals, label="Função")
     # Define a função da derivada d(x)
-    plt.plot(x_vals, derivada_vals, label="Derivada")
+    plt.plot(x_vals, [eval(str(derivada))for x in x_vals], label="Derivada")
 
     # Define a largura e espessura dos eixos x e y
     plt.axhline(0, color='black', linewidth=1.5)
@@ -81,4 +78,7 @@ def funcao_exponencial():
 
 # Executa a função principal se o script for executado como um programa independente
 if __name__ == "__main__":
+    from limpar_console import limpar_console
     funcao_exponencial()
+else:
+    from .limpar_console import limpar_console
