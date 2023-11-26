@@ -26,12 +26,13 @@ def instalar_dependencias(bibliotecas):
     limpar_console()
 
 
-    print("Verificando dependências...")
-    try:
-        import tkinter
-    except ImportError:
-        print("Não foi possível encontrar a dependência tkinter!")
-        sys.exit(1)
+limpar_console()
+print("Verificando dependências...")
+try:
+    import tkinter
+except ImportError:
+    print("Não foi possível encontrar a dependência tkinter!")
+    sys.exit(1)
 try:
     import matplotlib
     import numpy
@@ -43,4 +44,3 @@ except ImportError:
     print("Não foi possível encontrar as dependências.")
     bibliotecas = ["matplotlib", "numpy", "sympy"]
     instalar_dependencias(bibliotecas)
-
