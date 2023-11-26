@@ -4,7 +4,7 @@ from src.limpar_console import limpar_console
 
 def calculadora():
     while True:
-        print("\nBem-vindo à Calculadora com Gráfico!")
+        print("Bem-vindo à Calculadora com Gráfico!")
         print("\nEscolha uma operação:\n")
         print("1 - Adição")
         print("2 - Subtração")
