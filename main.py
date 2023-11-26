@@ -2,6 +2,7 @@ from src.func_expo import funcao_exponencial
 from src.func_trig import funcao_trigonometrica
 from src.limpar_console import limpar_console
 
+
 def calculadora():
     while True:
         print("Bem-vindo à Calculadora com Gráfico!")
@@ -23,24 +24,41 @@ def calculadora():
         elif escolha in ['1', '2', '3', '4']:
             limpar_console()
             operacao = int(escolha)
-            num1 = float(input("Digite o primeiro número: "))
-            num2 = float(input("Digite o segundo número: "))
+            while True:
+                try:
+                    num1 = float(input("Digite o primeiro número: "))
+                    num2 = float(input("Digite o segundo número: "))
+                    break
+                except ValueError:
+                    print("Erro: Entrada inválida!")
+                    input("Pressione ENTER para continuar...")
+                    limpar_console()
+                    continue
 
             if operacao == 1:
                 resultado = num1 + num2
-                print(f"Resultado: {resultado:.2f}")
+                print(f"\nResultado: {num1:.0f} + {num2:.0f} = {resultado:.0f}")
+                input("\nPressione ENTER para continuar...")
+                
             elif operacao == 2:
                 resultado = num1 - num2
-                print(f"Resultado: {resultado:.2f}")
+                print(f"\nResultado: {num1:.0f} - {num2:.0f} = {resultado:.0f}")
+                input("\nPressione ENTER para continuar...")
+
             elif operacao == 3:
                 resultado = num1 * num2
-                print(f"resultado: {resultado:.2f}")
+                print(f"\nResultado: {num1:.0f} x {num2:.0f} = {resultado:.0f}")
+                input("\nPressione ENTER para continuar...")
+
             elif operacao == 4:
                 if num2 != 0:
                     resultado = num1 / num2
-                    print(f"Resultado: {resultado:.2f}")
+                    print(f"\nResultado: {num1} / {num2} = {resultado:.2f}")
+                    input("\nPressione ENTER para continuar...")
                 else:
-                    print("Erro: Divisão por zero!")
+                    print("\nErro: Divisão por zero!")
+                input("\nPressione ENTER para continuar...")
+
         elif escolha == '5':
             funcao_exponencial()
 
@@ -50,7 +68,7 @@ def calculadora():
             limpar_console()
             print("Opção inválida. Tente novamente.")
             continue
-        
+
         limpar_console()
 
 
