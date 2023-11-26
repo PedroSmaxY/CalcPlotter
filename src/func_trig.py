@@ -75,6 +75,7 @@ def funcao_trigonometrica():
     
     # Cria a figura
     plt.show()
+    input("\nPressione ENTER para continuar...")
 
 # Executa a função principal se o script for executado como um programa independente
 if __name__ == "__main__":
