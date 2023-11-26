@@ -7,16 +7,21 @@ from .limpar_console import limpar_console
 
 def instalar_dependencias(bibliotecas):
     print("Instalando dependências...")
+    sleep(1)
 
     for biblioteca in bibliotecas:
         try:
             subprocess.check_call([sys.executable, "-m", "pip", "install", biblioteca])
-            print(f"{biblioteca} instalada com sucesso!")
+            print(f"\n{biblioteca} instalada com sucesso!")
+            sleep(1)
         except subprocess.CalledProcessError as erro:
             if "No module named pip" in str(erro):
-                print("O pip não está instalado no seu sistema.")
+                print("\nO pip não está instalado no seu sistema.")
+
             else:
-                print(f"Erro ao instalar {biblioteca}!")
+                print(f"\nErro ao instalar {biblioteca}!")
+
+            sleep(2.5)
             sys.exit(1)
         sleep(1)
         limpar_console()
@@ -28,10 +33,12 @@ def instalar_dependencias(bibliotecas):
 
 limpar_console()
 print("Verificando dependências...")
+sleep(1)
 try:
     import tkinter
 except ImportError:
     print("Não foi possível encontrar a dependência tkinter!")
+    sleep(2.5)
     sys.exit(1)
 try:
     import matplotlib
@@ -41,6 +48,5 @@ try:
     sleep(1)
     limpar_console()
 except ImportError:
-    print("Não foi possível encontrar as dependências.")
     bibliotecas = ["matplotlib", "numpy", "sympy"]
     instalar_dependencias(bibliotecas)
