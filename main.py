@@ -47,7 +47,11 @@ def calculadora():
         elif escolha == '6':
             funcao_trigonometrica()
         else:
+            limpar_console()
             print("Opção inválida. Tente novamente.")
+            continue
+        
+        limpar_console()
 
 
 if __name__ == "__main__":
