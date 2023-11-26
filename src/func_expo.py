@@ -1,5 +1,5 @@
 # Importa as bibliotecas necessárias
-from sympy import symbols, diff, integrate
+from sympy import symbols, diff, integrate, sympify, lambdify
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib
@@ -13,52 +13,70 @@ def funcao_exponencial():
     x = symbols('x')
 
     # Loop para garantir que o usuário insira uma função exponencial válida
-    while (True):
+    while True:
+        print("Digite uma função em termos de 'x' (por exemplo, x**2)")
         try:
             # Tenta converter a entrada do usuário em uma expressão simbólica
-            funcao = input("Digite uma função em termos de 'x' (por exemplo, x**2): y=")
+            funcao = sympify(input("\ny="))
+            break
         except:
             # Se ocorrer um erro, exibe uma mensagem e continua o loop
             print("Erro: Função exponencial inválida. Certifique-se de usar a sintaxe correta.")
+            continue
 
-    # Calcula a derivada e a integral
+    # Calcula a derivada e a integral da função
     derivada = diff(funcao, x)
     integral = integrate(funcao, x)
 
-    # Mostra na tela os valores da derivada e integral
+    # Exibe as informações da derivada e integral
     print(f"\nDerivada da função: {derivada}\n")
     print(f"Integral da função: {integral}\n")
+    
+
+    # Converte a função simbólica para uma função que pode ser avaliada numericamente
+    f = lambdify(x, funcao, "numpy")
+
+    # Converte a expressão da derivada em uma função numérica
+    derivada_func = lambdify(x, derivada, "numpy")
 
     # Gera valores de x para o gráfico
     x_vals = np.linspace(-100, 100, 10000)
 
-    # Define os valores de y para cada valor de x
-    y_vals = [eval(funcao) for x in x_vals]
+    # Avalia a expressão para obter os valores de y correspondentes
+    y_vals = f(x_vals)
+
+    # Avalia a função derivada nos valores de x para o gráfico
+    derivada_vals = derivada_func(x_vals)
 
     # Define o tamanho da figura
     plt.figure(figsize=(10, 5))
 
     # Define a função do gráfico
     plt.plot(x_vals, y_vals, label="Função")
-    # Define a função da derivada i(x)
-    plt.plot(x_vals, [eval(str(derivada))for x in x_vals], label="Derivada")
+    # Define a função da derivada d(x)
+    plt.plot(x_vals, derivada_vals, label="Derivada")
 
-    # Define a largura e espessura do eixo x
+    # Define a largura e espessura dos eixos x e y
     plt.axhline(0, color='black', linewidth=1.5)
-    # Define a largura e espessura do eixo y
     plt.axvline(0, color='black', linewidth=1.5)
 
     # Define um titulo para a figura
-    plt.title("Gráfico da Função e sua Derivada")
-    plt.xlabel("x")  # Define um nome ao eixo x
-    plt.ylabel("y")  # Define um nome ao eixo y
+    plt.title("Gráfico da Função Exponencial")
+    # Define os nomes dos eixos x e y
+    plt.xlabel("x")  
+    plt.ylabel("y")  
 
-    plt.xlim(-10, 10)  # Define uma escala de visão no eixo x
-    plt.ylim(-5, 15)  # Define uma escala de visão no eixo y
+    # Define a escala de visão do gráfico
+    plt.xlim(-10, 10)  
+    plt.ylim(-5, 15)  
 
-    plt.legend()  # Adiciona um índice para cada função
-    plt.grid(True)  # Mostra a grade na figura
-    plt.show()  # Cria a figura
+    # Adiciona os índices de cada função
+    plt.legend()  
+    # Mostra a grade na figura
+    plt.grid(True)  
+    
+    # Cria a figura
+    plt.show()  
 
 
 # Executa a função principal se o script for executado como um programa independente
