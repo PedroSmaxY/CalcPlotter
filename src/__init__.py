@@ -8,6 +8,7 @@ from .limpar_console import limpar_console
 def instalar_dependencias(bibliotecas):
     print("Instalando dependências...")
     sleep(1)
+    limpar_console()
 
     for biblioteca in bibliotecas:
         try:
