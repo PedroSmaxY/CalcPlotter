@@ -32,7 +32,7 @@ def funcao_trigonometrica():
 
     # Exibe as informações da derivada e integral
     print(f"\nDerivada da função: {derivada}\n")
-    print(f"Integral da função: {integral}\n")
+    print(f"Integral da função: {integral} + c\n")
 
     # Converte a expressão da derivada em uma função numérica
     derivada_func = lambdify(x, derivada, "numpy")

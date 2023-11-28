@@ -33,7 +33,7 @@ def funcao_exponencial():
 
     # Exibe as informações da derivada e integral
     print(f"\nDerivada da função: {derivada}\n")
-    print(f"Integral da função: {integral}\n")
+    print(f"Integral da função: {integral} + c\n")
     
 
     # Converte a função simbólica para uma função que pode ser avaliada numericamente
