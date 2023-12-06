@@ -1,53 +1,53 @@
-# Este é o arquivo __init__.py do pacote 'src'
+# This is the __init__.py file of the 'src' package
 import sys
 import subprocess
 from time import sleep
-from .limpar_console import limpar_console
+from .clear_console import clear_console
 
 
-def instalar_dependencias(bibliotecas):
-    print("Instalando dependências...")
+def install_dependencies(libraries):
+    print("Installing dependencies...")
     sleep(1)
-    limpar_console()
+    clear_console()
 
-    for biblioteca in bibliotecas:
+    for library in libraries:
         try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", biblioteca])
-            print(f"\n{biblioteca} instalada com sucesso!")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", library])
+            print(f"\n{library} installed successfully!")
             sleep(1)
-        except subprocess.CalledProcessError as erro:
-            if "No module named pip" in str(erro):
-                print("\nO pip não está instalado no seu sistema.")
+        except subprocess.CalledProcessError as error:
+            if "No module named pip" in str(error):
+                print("\npip is not installed on your system.")
 
             else:
-                print(f"\nErro ao instalar {biblioteca}!")
+                print(f"\nError installing {library}!")
 
             sleep(2.5)
             sys.exit(1)
         sleep(1)
-        limpar_console()
+        clear_console()
 
-    print("Dependências instaladas com sucesso!")
+    print("Dependencies installed successfully!")
     sleep(1)
-    limpar_console()
+    clear_console()
 
 
-limpar_console()
-print("Verificando dependências...")
+clear_console()
+print("Checking dependencies...")
 sleep(1)
 try:
     import tkinter
 except ImportError:
-    print("Não foi possível encontrar a dependência tkinter!")
+    print("Could not find the tkinter dependency!")
     sleep(2.5)
     sys.exit(1)
 try:
     import matplotlib
     import numpy
     import sympy
-    print("Dependências verificadas com sucesso!")
+    print("Dependencies checked successfully!")
     sleep(1)
-    limpar_console()
+    clear_console()
 except ImportError:
-    bibliotecas = ["matplotlib", "numpy", "sympy"]
-    instalar_dependencias(bibliotecas)
+    libraries = ["matplotlib", "numpy", "sympy"]
+    install_dependencies(libraries)
