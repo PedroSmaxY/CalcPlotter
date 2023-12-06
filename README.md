@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Overview
+## Summary
 
 GraphicalCalcToolkit is a project developed as part of our Calculus 1 course. This toolkit provides a set of tools for visualizing mathematical functions, particularly focusing on exponential and trigonometric functions. It utilizes the Sympy library for symbolic mathematics and Matplotlib for graphical representation and to show the functions' differential and integral.
 
