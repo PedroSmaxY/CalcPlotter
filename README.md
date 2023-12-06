@@ -79,4 +79,4 @@ Contributions are welcome! If you have ideas for improvement or find any issues,
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/PedroSmaxY/GraphicalCalcToolkit/blob/master/LICENSE)).
+This project is licensed under the [MIT License](https://github.com/PedroSmaxY/GraphicalCalcToolkit/blob/master/LICENSE).
