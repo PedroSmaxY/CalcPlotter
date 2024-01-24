@@ -47,11 +47,11 @@ To use the toolkit, follow these steps:
 
 1. Clone the repository.
    ```bash 
-   git clone https://github.com/PedroSmaxY/GraphicalCalcToolkit.git
+   git clone https://github.com/PedroSmaxY/CalcPlotter.git
    ```
 2. Navigate to the project directory.
    ```bash
-   cd GraphicalCalcToolkit
+   cd CalcPlotter
    ```
 3. Run the toolkit.
    ```bash
@@ -75,8 +75,8 @@ To use the toolkit, follow these steps:
 
 ## Contribution
 
-Contributions are welcome! If you have ideas for improvement or find any issues, feel free to open an [issue](https://github.com/PedroSmaxY/GraphicalCalcToolkit/issues) or submit a [pull request](https://github.com/PedroSmaxY/GraphicalCalcToolkit/pulls).
+Contributions are welcome! If you have ideas for improvement or find any issues, feel free to open an [issue](https://github.com/PedroSmaxY/GraphicalCalcToolkit/issues) or submit a [pull request](https://github.com/PedroSmaxY/CalcPlotter/pulls).
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/PedroSmaxY/GraphicalCalcToolkit/blob/master/LICENSE).
+This project is licensed under the [MIT License](https://github.com/PedroSmaxY/CalcPlotter/blob/master/LICENSE).
